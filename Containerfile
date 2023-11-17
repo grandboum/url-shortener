@@ -1,4 +1,4 @@
-FROM docker.io/library/openjdk:11
+FROM docker.io/library/eclipse-temurin:17
 
 RUN apt update && apt install -y \
   jetty9 \
