@@ -34,9 +34,9 @@
    <build>
      <plugins>
        <plugin>
-         <groupId>org.eclipse.jetty</groupId>
-         <artifactId>jetty-maven-plugin</artifactId>
-         <version>11.0.13</version>
+         <groupId>org.eclipse.jetty.ee10</groupId>
+         <artifactId>jetty-ee10-maven-plugin</artifactId>
+         <version>${jetty-version}</version>
          <configuration>
            <scanIntervalSeconds>10</scanIntervalSeconds>
              <webApp>
@@ -47,23 +47,12 @@
        <plugin>
          <groupId>org.apache.maven.plugins</groupId>
          <artifactId>maven-compiler-plugin</artifactId>
-   	 <version>${maven-compiler-version}</version>
+   	     <version>${maven-compiler-version}</version>
        </plugin>
        <plugin>
          <groupId>org.apache.maven.plugins</groupId>
          <artifactId>maven-war-plugin</artifactId>
-	 <version>${maven-war-version}</version>
-       </plugin>
-       <plugin>
-         <groupId>org.codehaus.mojo</groupId>
-         <artifactId>exec-maven-plugin</artifactId>
-         <version>3.1.0</version>
-         <executions>
-           <execution><goals><goal>java</goal></goals></execution>
-         </executions>
-         <configuration>
-           <mainClass>com.example.HelloWorldServlet</mainClass>
-         </configuration>
+         <version>${maven-war-version}</version>
        </plugin>
      </plugins>
    </build>
