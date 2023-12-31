@@ -1,0 +1,12 @@
+FROM docker.io/library/maven:3.8.8-eclipse-temurin-17-alpine as build
+
+COPY src /home/app/src
+COPY pom.xml /home/app
+RUN mvn -f /home/app/pom.xml clean package
+
+FROM docker.io/library/jetty:latest
+COPY --from=build /home/app/target/url-shortener-1.0.war /var/lib/jetty/webapps/root.war
+COPY ./jetty-logging.properties /var/lib/jetty/resources/jetty-logging.properties
+
+EXPOSE 8081
+CMD java -jar "$JETTY_HOME/start.jar" jetty.http.port=8081 jetty.server.dumpAfterStart=true

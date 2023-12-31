@@ -9,5 +9,5 @@ async function fetchData(url) {
   return data["text"];
 }
 
-fetchData("/hello")
+fetchData("/api/hello")
     .then(showGreeting)

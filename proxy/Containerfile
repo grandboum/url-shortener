@@ -1,0 +1,9 @@
+FROM docker.io/library/httpd:latest
+
+COPY ./conf/apache/httpd.conf /usr/local/apache2/conf/httpd.conf
+COPY ./conf/apache/000-default.conf /usr/local/apache2/sites-available/000-default.conf
+COPY ./conf/apache/000-default.conf /usr/local/apache2/sites-enabled/000-default.conf
+
+EXPOSE 8080
+
+CMD ["httpd", "-D", "FOREGROUND"]
