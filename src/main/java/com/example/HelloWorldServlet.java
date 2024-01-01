@@ -9,14 +9,14 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet(urlPatterns = {"/hello"}, loadOnStartup = 1)
+//@WebServlet(urlPatterns = {"/hello"}, loadOnStartup = 1)
 public class HelloWorldServlet extends HttpServlet
 {
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException
     {
         Map<String, String> json = new HashMap<>();
-        json.put("text", "Hello, hooman.");
+        json.put("text", "Hello, hooman");
         Gson gson = new Gson();
         
         response.setContentType("application/json");
