@@ -17,15 +17,15 @@
     <maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
     <maven.war.plugin.version>3.4.0</maven.war.plugin.version>
     <java.servlet-api.version>5.0.0</java.servlet-api.version>
-    <jetty.version>11.0.19</jetty.version>
+    <maven.jetty.plugin.version>11.0.19</maven.jetty.plugin.version>
+    <servlet.version>12.0.5</servlet.version>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>jakarta.servlet</groupId>
-      <artifactId>jakarta.servlet-api</artifactId>
-      <version>${java.servlet-api.version}</version>
-      <scope>provided</scope>
+      <groupId>org.eclipse.jetty.ee10</groupId>
+      <artifactId>jetty-ee10-servlet</artifactId>
+      <version>${servlet.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.gson</groupId>
@@ -40,7 +40,7 @@
       <plugin>
         <groupId>org.eclipse.jetty.ee10</groupId>
         <artifactId>jetty-ee10-maven-plugin</artifactId>
-        <version>${jetty.version}</version>
+        <version>${maven.jetty.plugin.version}</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

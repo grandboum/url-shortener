@@ -16,7 +16,7 @@ public class HelloWorldServlet extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException
     {
         Map<String, String> json = new HashMap<>();
-        json.put("text", "Hello, hooman");
+        json.put("text", "Hello, hooman.");
         Gson gson = new Gson();
         
         response.setContentType("application/json");
