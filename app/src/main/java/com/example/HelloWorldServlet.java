@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-//@WebServlet(urlPatterns = {"/hello"}, loadOnStartup = 1)
+@WebServlet(urlPatterns = {"/hello"}, loadOnStartup = 1)
 public class HelloWorldServlet extends HttpServlet
 {
     @Override
